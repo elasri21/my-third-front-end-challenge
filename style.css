@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    text-decoration: navajowhite;
+    text-decoration: none;
     outline: none;
 }
 body {
@@ -12,20 +12,27 @@ body {
     padding-top: 20px;
     font-family: "Rubik";
     height: 900px;
-   
-
+    perspective: 600px;
 }
 
 /*workink with container*/
 #container {
-  height: 600px;
-  
+   height: 600px;
    width: 80%;
    /*position: relative;*/
    background-color: hsl(0, 0%, 100%);
    margin-right: auto;
    margin-left: auto;
    display: flex; 
+   transition: .5s ease-in-out;
+}
+#container:hover {
+    animation: front 1s ease-in-out;
+}
+@keyframes front {
+    50% {
+        transform: translateZ((30px));
+    }
 }
 @media screen and (max-width: 375px)  {
     #container {
