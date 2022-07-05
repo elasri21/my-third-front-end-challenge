@@ -1,0 +1,221 @@
+.container {
+    @media #{$small} {
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        .phone {
+            width: 250px;
+        }
+        .description {
+            width: 45%;
+            * {
+                text-align: left;
+            }
+        }
+    }
+    @media #{$mobile} {
+        .phone {
+            margin-bottom: 40px;
+        }
+        .description {
+            text-align: center;
+        }
+    }
+    padding: 20px;
+    height: 100%;
+    position: relative;
+    background-color: $white;
+    transition: 0.5s ease-in-out;
+    &:hover {
+        animation: front 1s ease-in-out;
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 33.33%;
+        height: 80%;
+        border-radius: 0 0 100% 0;
+        background-image: linear-gradient($light-magenta, $light-violet);
+    }
+    .phone{
+        z-index: 111;
+        background-color: $white;
+        padding: 8px;
+        border-radius: 10px;
+        position: relative;
+        .phone-top {
+            background-image: linear-gradient(to right, $light-magenta, $light-violet);
+            position: relative;
+            border-radius: 10px 10px 3px 3px;
+            .white {
+                width: 70%;
+                height: 10px;
+                background-color: $white;
+                position: relative;
+                top: -5px;
+                border-radius: 10px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .person {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .prev {
+                    display: inline-block;
+                    margin-left: 8px;
+                    margin-right: 8px;
+                    text-align: center;
+                    color: $white;
+                }
+                .profile {
+                    border-radius: 50%;
+                    background-color: $white;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    img {
+                        width: 45px;
+                        height: 45px;
+                        border-radius: 50%;
+                        padding: 3px;
+                    }
+                }
+                .personel-inf {
+                    margin-left: 5px;
+                    h3 { color: $white;}
+                    p {
+                        color: $white;
+                        font-size: 12px;
+                        font-weight: 500;
+                    }
+                }
+                span {
+                    &.btn {
+                        color: $white;
+                        position: absolute;
+                        right: 5px;
+                    }
+                }
+            }
+        }
+        .descussion {
+            background-color: #ddd;
+            padding: 5px;
+            border-radius:0 0 10px 10px;
+            .left {
+                p {
+                    margin: 8px;
+                    padding: 8px;
+                    border-radius: 15px;
+                    width: 80%;
+                    font-size: 12px;
+                    font-weight: 400;
+                    background-color: $app-bg;
+                    color: $chat-on-the-left;
+                    // &.first {
+                    //     font-size: 12px;
+                    //     font-weight: 400;
+                    //     background-color: $app-bg;
+                    //     color: $chat-on-the-left;
+                    // }
+                    &.price {
+                        background-image: linear-gradient(to right, $light-magenta, $light-violet);
+                        color: $white;
+                        .bold {
+                            font-size: 13px;
+                            font-weight: 700;
+                        }
+                    }
+                }
+            }
+            .right {
+                overflow: auto;
+                text-align: right;
+                .images {
+                    text-align: right;
+                    padding: 8px;
+                    img {
+                        width: 32px;
+                        height: 32px;
+                        margin-right: 4px;
+                        border-radius: 3px;
+                    }
+                    p {
+                        display: inline-block;
+                        background-color: $white;
+                        width: 80%;
+                        color: $main-heading;
+                        margin: 8px;
+                        padding: 6px;
+                        font-size: 12px;
+                        border-radius: 15px;
+                        text-align: left;
+                    }
+                }
+            }
+            .message {
+                position: relative;
+                input {
+                    padding: 8px;
+                    margin: 8px;
+                    width: 90%;
+                    border-radius: 15px;
+                    border: none;
+                    background-color: $white;
+                }
+                .send-message {
+                    position: absolute;
+                    display: inline-block;
+                    width: 20px;
+                    height: 20px;
+                    text-align: center;
+                    line-height: 15px;
+                    background-color: hsl(240, 4%, 10%);
+                    color: $app-bg;
+                    padding: 3px;
+                    border-radius: 50%;
+                    bottom: 15px;
+                    right: 25px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .description {
+        h1 {
+            font-weight: 700;
+            font-size: 22px;
+            color: $main-heading;
+            margin-bottom: 20px;
+        }
+        p {
+            font-weight: 500;
+            font-size: 13px;
+            color: $paragraph;
+            width: 100%;
+        }
+    }
+}
+footer {
+    margin-top: 20px;
+    .attribution {
+        font-size: 11px;
+        text-align: center;
+        a { 
+            color: hsl(228, 45%, 44%);
+        }
+    }
+}
+
+//animation
+@keyframes front {
+    50% {
+        transform: translateZ((30px));
+    }
+}

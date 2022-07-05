@@ -1,0 +1,241 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+}
+
+body {
+  background-color: #ddd;
+  padding: 15px;
+  font-size: 16px;
+  font-family: "Rubik", sans-serif;
+  perspective: 600px;
+}
+@media (min-width: 768px) {
+  body {
+    height: 100vh;
+  }
+}
+@media (max-width: 767px) {
+  body {
+    height: auto;
+  }
+}
+
+.container {
+  padding: 20px;
+  height: 100%;
+  position: relative;
+  background-color: white;
+  transition: 0.5s ease-in-out;
+}
+@media (min-width: 768px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .container .phone {
+    width: 250px;
+  }
+  .container .description {
+    width: 45%;
+  }
+  .container .description * {
+    text-align: left;
+  }
+}
+@media (max-width: 767px) {
+  .container .phone {
+    margin-bottom: 40px;
+  }
+  .container .description {
+    text-align: center;
+  }
+}
+.container:hover {
+  animation: front 1s ease-in-out;
+}
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 33.33%;
+  height: 80%;
+  border-radius: 0 0 100% 0;
+  background-image: linear-gradient(#e942ff, #8838ff);
+}
+.container .phone {
+  z-index: 111;
+  background-color: white;
+  padding: 8px;
+  border-radius: 10px;
+  position: relative;
+}
+.container .phone .phone-top {
+  background-image: linear-gradient(to right, #e942ff, #8838ff);
+  position: relative;
+  border-radius: 10px 10px 3px 3px;
+}
+.container .phone .phone-top .white {
+  width: 70%;
+  height: 10px;
+  background-color: white;
+  position: relative;
+  top: -5px;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.container .phone .phone-top .person {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .phone .phone-top .person .prev {
+  display: inline-block;
+  margin-left: 8px;
+  margin-right: 8px;
+  text-align: center;
+  color: white;
+}
+.container .phone .phone-top .person .profile {
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .phone .phone-top .person .profile img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  padding: 3px;
+}
+.container .phone .phone-top .person .personel-inf {
+  margin-left: 5px;
+}
+.container .phone .phone-top .person .personel-inf h3 {
+  color: white;
+}
+.container .phone .phone-top .person .personel-inf p {
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+}
+.container .phone .phone-top .person span.btn {
+  color: white;
+  position: absolute;
+  right: 5px;
+}
+.container .phone .descussion {
+  background-color: #ddd;
+  padding: 5px;
+  border-radius: 0 0 10px 10px;
+}
+.container .phone .descussion .left p {
+  margin: 8px;
+  padding: 8px;
+  border-radius: 15px;
+  width: 80%;
+  font-size: 12px;
+  font-weight: 400;
+  background-color: #f5f3f7;
+  color: #9241c8;
+}
+.container .phone .descussion .left p.price {
+  background-image: linear-gradient(to right, #e942ff, #8838ff);
+  color: white;
+}
+.container .phone .descussion .left p.price .bold {
+  font-size: 13px;
+  font-weight: 700;
+}
+.container .phone .descussion .right {
+  overflow: auto;
+  text-align: right;
+}
+.container .phone .descussion .right .images {
+  text-align: right;
+  padding: 8px;
+}
+.container .phone .descussion .right .images img {
+  width: 32px;
+  height: 32px;
+  margin-right: 4px;
+  border-radius: 3px;
+}
+.container .phone .descussion .right .images p {
+  display: inline-block;
+  background-color: white;
+  width: 80%;
+  color: #3e2753;
+  margin: 8px;
+  padding: 6px;
+  font-size: 12px;
+  border-radius: 15px;
+  text-align: left;
+}
+.container .phone .descussion .message {
+  position: relative;
+}
+.container .phone .descussion .message input {
+  padding: 8px;
+  margin: 8px;
+  width: 90%;
+  border-radius: 15px;
+  border: none;
+  background-color: white;
+}
+.container .phone .descussion .message .send-message {
+  position: absolute;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 15px;
+  background-color: #18181b;
+  color: #f5f3f7;
+  padding: 3px;
+  border-radius: 50%;
+  bottom: 15px;
+  right: 25px;
+  cursor: pointer;
+}
+.container .description h1 {
+  font-weight: 700;
+  font-size: 22px;
+  color: #3e2753;
+  margin-bottom: 20px;
+}
+.container .description p {
+  font-weight: 500;
+  font-size: 13px;
+  color: #a39daa;
+  width: 100%;
+}
+
+footer {
+  margin-top: 20px;
+}
+footer .attribution {
+  font-size: 11px;
+  text-align: center;
+}
+footer .attribution a {
+  color: #3e52a3;
+}
+
+@keyframes front {
+  50% {
+    transform: translateZ(30px);
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

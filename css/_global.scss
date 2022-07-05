@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+}
+body {
+    @media #{$small} {
+        height: 100vh;
+    }
+    @media #{$mobile} {
+        height: auto;
+    }
+    background-color: #ddd;
+    padding: 15px;
+    font-size: 16px;
+    font-family: "Rubik", sans-serif;
+    perspective: 600px;
+}
